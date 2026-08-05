@@ -124,6 +124,7 @@ assets/styles.css              gaya; token warna ada di :root
 assets/app.js                  pemuat data, parser CSV, pencarian, perender
 assets/icons/                  ikon PWA
 assets/qr.svg, assets/qr.png   QR code menuju situs, untuk dicetak & ditempel
+poster.html                    poster A4 siap cetak (buka lalu Cmd+P)
 data/config.json               alamat CSV Google Sheet — satu-satunya tempat diubah
 data/links.json                salinan cadangan, disegarkan otomatis
 scripts/sync_links.py          CSV → links.json

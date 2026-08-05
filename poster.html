@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Poster Info Kurikulum — siap cetak A4</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* =========================================================
+   Poster A4 — dicetak lewat browser (Cmd+P / Ctrl+P).
+   Warna dikunci terang: ini untuk kertas, bukan layar.
+   ========================================================= */
+
+@page { size: A4 portrait; margin: 0; }
+
+:root {
+  --kertas: #ffffff;
+  --grid: #e6eae5;
+  --garis: #d3d9d2;
+  --tinta: #16233b;
+  --tinta-2: #5c6880;
+  --tinta-3: #8b94a6;
+  --stabilo: 247, 226, 114;
+  --merah: #be3a2b;
+
+  --f-display: "Bricolage Grotesque", system-ui, sans-serif;
+  --f-body: "Instrument Sans", system-ui, sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #6b7280;
+  font-family: var(--f-body);
+  color: var(--tinta);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Selembar A4 */
+.lembar {
+  position: relative;
+  width: 210mm;
+  height: 297mm;
+  margin: 10mm auto;
+  padding: 18mm 16mm 14mm;
+  background: var(--kertas);
+  box-shadow: 0 4mm 12mm rgba(0, 0, 0, .35);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ---------- Kop ---------- */
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 3mm;
+  margin: 0 0 6mm;
+  font-family: var(--f-mono);
+  font-weight: 700;
+  font-size: 10pt;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--tinta-2);
+}
+
+.titik {
+  width: 2mm; height: 2mm;
+  border-radius: 50%;
+  background: var(--merah);
+}
+
+.judul {
+  margin: 0;
+  font-family: var(--f-display);
+  font-weight: 800;
+  font-size: 68pt;
+  line-height: .84;
+  letter-spacing: -.035em;
+}
+
+.lead {
+  margin: 7mm 0 0;
+  max-width: 130mm;
+  font-size: 15pt;
+  line-height: 1.4;
+  color: var(--tinta-2);
+}
+
+/* ---------- Blok QR ----------
+   Satu-satunya tempat kertas kotak-kotak muncul: mengikat poster ini
+   ke tampilan situsnya tanpa menghabiskan tinta sehalaman penuh. */
+
+.blok-qr {
+  position: relative;
+  margin: 9mm -16mm 0;
+  padding: 10mm 16mm;
+  background-color: var(--kertas);
+  background-image:
+    linear-gradient(var(--grid) .3mm, transparent .3mm),
+    linear-gradient(90deg, var(--grid) .3mm, transparent .3mm);
+  background-size: 7mm 7mm;
+  background-position: center;
+  border-top: .4mm solid var(--garis);
+  border-bottom: .4mm solid var(--garis);
+  display: flex;
+  align-items: center;
+  gap: 12mm;
+}
+
+.qr {
+  flex: none;
+  width: 74mm;
+  height: 74mm;
+  padding: 3mm;
+  background: #fff;
+  border: .4mm solid var(--garis);
+}
+
+.qr img { display: block; width: 100%; height: 100%; }
+
+.ajakan { min-width: 0; }
+
+.ajakan__pindai {
+  margin: 0 0 4mm;
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-size: 21pt;
+  line-height: 1.1;
+  letter-spacing: -.015em;
+}
+
+.ajakan__atau {
+  margin: 0 0 2mm;
+  font-size: 11pt;
+  color: var(--tinta-2);
+}
+
+/* Sapuan stabilo — tanda tangan visual yang sama dengan situsnya */
+.alamat {
+  display: inline;
+  font-family: var(--f-mono);
+  font-weight: 700;
+  font-size: 12.5pt;
+  line-height: 1.6;
+  word-break: break-all;
+  background-image: linear-gradient(
+    -100deg,
+    rgba(var(--stabilo), 0) 0%,
+    rgba(var(--stabilo), .9) 3%,
+    rgba(var(--stabilo), .6) 94%,
+    rgba(var(--stabilo), 0) 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 100% 62%;
+  background-position: 0 88%;
+  padding-inline: .5mm;
+}
+
+/* ---------- Isi ---------- */
+
+.isi { margin-top: 9mm; }
+
+.isi__label {
+  margin: 0 0 4mm;
+  font-family: var(--f-mono);
+  font-weight: 700;
+  font-size: 9.5pt;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--tinta-3);
+}
+
+.daftar {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3mm 6mm;
+}
+
+.daftar li {
+  padding-top: 2.5mm;
+  border-top: .4mm solid var(--garis);
+  font-size: 12pt;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+/* ---------- Kaki ---------- */
+
+.kaki {
+  margin-top: auto;
+  padding-top: 6mm;
+  border-top: .4mm solid var(--garis);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 8mm;
+}
+
+.kaki__tip {
+  margin: 0;
+  max-width: 115mm;
+  font-size: 10pt;
+  line-height: 1.45;
+  color: var(--tinta-2);
+}
+
+.kaki__tip strong { color: var(--tinta); font-weight: 600; }
+
+.kaki__cap {
+  margin: 0;
+  flex: none;
+  font-family: var(--f-mono);
+  font-size: 8.5pt;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--tinta-3);
+}
+
+/* ---------- Petunjuk cetak: hanya tampil di layar ---------- */
+
+.petunjuk {
+  max-width: 210mm;
+  margin: 0 auto 10mm;
+  padding: 5mm 6mm;
+  background: #f8fafc;
+  border-left: 1mm solid var(--tinta);
+  font-size: 10.5pt;
+  line-height: 1.5;
+  color: #1f2937;
+}
+
+.petunjuk h2 { margin: 0 0 2mm; font-size: 12pt; font-family: var(--f-display); }
+.petunjuk kbd {
+  font-family: var(--f-mono);
+  font-size: .85em;
+  padding: .3mm 1.4mm;
+  border: .3mm solid #cbd5e1;
+  border-radius: .8mm;
+  background: #fff;
+}
+
+@media print {
+  /* Dikunci pas satu halaman. Tanpa ini, sisa tinggi sekecil apa pun
+     bisa membuat browser mencetak halaman kedua yang kosong. */
+  html, body {
+    width: 210mm;
+    height: 297mm;
+    overflow: hidden;
+    background: none;
+  }
+  .petunjuk { display: none; }
+  .lembar { margin: 0; box-shadow: none; }
+
+  /* Tanpa ini, sebagian browser membuang latar stabilo & grid saat mencetak */
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+</style>
+</head>
+<body>
+
+<aside class="petunjuk">
+  <h2>Cara mencetak</h2>
+  Tekan <kbd>Cmd</kbd>+<kbd>P</kbd> (atau <kbd>Ctrl</kbd>+<kbd>P</kbd>) → ukuran kertas <strong>A4</strong>,
+  skala <strong>100%</strong>, margin <strong>None</strong>, dan centang <strong>Background graphics</strong>
+  supaya sorotan kuningnya ikut tercetak. Kotak ini tidak akan ikut tercetak.
+</aside>
+
+<div class="lembar">
+
+  <p class="eyebrow">
+    <span>Kurikulum</span>
+    <span class="titik" aria-hidden="true"></span>
+    <span>Untuk guru &amp; staf</span>
+  </p>
+
+  <h1 class="judul">Info<br>Kurikulum</h1>
+
+  <p class="lead">
+    Semua tautan kurikulum sekarang ada di satu halaman.
+    Tidak perlu lagi menggulir grup mencari link yang tenggelam.
+  </p>
+
+  <div class="blok-qr">
+    <div class="qr">
+      <img src="assets/qr.svg" alt="Kode QR menuju situs Info Kurikulum">
+    </div>
+    <div class="ajakan">
+      <p class="ajakan__pindai">Pindai dengan kamera HP</p>
+      <p class="ajakan__atau">atau ketik alamatnya langsung:</p>
+      <span class="alamat">fakhri24.github.io/info-kurikulum</span>
+    </div>
+  </div>
+
+  <div class="isi">
+    <p class="isi__label">Yang ada di dalamnya</p>
+    <ul class="daftar">
+      <li>Jadwal Pelajaran</li>
+      <li>Form Piket Pagi</li>
+      <li>Kelas Tambahan Sore &amp; Malam</li>
+      <li>Data Siswa</li>
+      <li>Data Siswa Lintas Minat</li>
+      <li>Rapor</li>
+      <li>Data Buku Paket Pelajaran</li>
+      <li>SK &amp; Surat Tugas</li>
+      <li>Kotak Saran &amp; Laporan</li>
+    </ul>
+  </div>
+
+  <div class="kaki">
+    <p class="kaki__tip">
+      <strong>Simpan di layar utama HP.</strong> Buka alamatnya, lalu pilih
+      <em>Bagikan → Tambahkan ke Layar Utama</em>. Setelah itu ia terbuka seperti aplikasi,
+      satu ketukan dari layar depan.
+    </p>
+    <p class="kaki__cap">Tim Kurikulum</p>
+  </div>
+
+</div>
+
+</body>
+</html>
