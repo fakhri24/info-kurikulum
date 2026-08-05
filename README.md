@@ -1,11 +1,51 @@
 # Info Kurikulum
 
+**→ https://fakhri24.github.io/info-kurikulum/**
+
 Satu halaman berisi seluruh tautan kurikulum — jadwal pelajaran, form piket pagi,
 data siswa, rapor, dan lainnya — supaya tidak lagi tenggelam di grup chat.
 
 Halaman ini **tidak menyimpan data apa pun**. Ia hanya mengarahkan ke dokumen yang
 sudah ada di Google Workspace. Siapa yang boleh membuka sebuah dokumen tetap
 ditentukan oleh izin dokumen itu sendiri.
+
+---
+
+## Menyebarkan ke guru
+
+Cukup bagikan satu alamat itu. Tiga cara memakainya:
+
+| | Ke mana |
+|---|---|
+| **Bagikan di grup** | Kirim alamatnya, lalu **pin** supaya tidak ikut tenggelam |
+| **Tempel di ruang guru** | Cetak posternya: **https://fakhri24.github.io/info-kurikulum/poster.html** |
+| **Kirim QR-nya saja** | Ambil berkasnya di [`assets/qr.png`](assets/qr.png) |
+
+### Poster siap cetak
+
+Buka [`poster.html`](poster.html) di browser, lalu tekan `Cmd`+`P` (atau `Ctrl`+`P`).
+Sudah pas satu halaman A4 — tidak perlu aplikasi lain.
+
+Di dialog cetak, pastikan:
+
+- ukuran kertas **A4**, skala **100%**, margin **None**
+- **Background graphics** dicentang — tanpa ini sorotan kuning dan pita
+  kotak-kotaknya hilang, posternya jadi hitam-putih polos
+
+Kotak petunjuk abu-abu di layar tidak ikut tercetak.
+
+### Berkas QR code
+
+| Berkas | Untuk apa |
+|---|---|
+| [`assets/qr.svg`](assets/qr.svg) | **Cetak.** Vektor — tajam di ukuran apa pun, dari A5 sampai A3 |
+| [`assets/qr.png`](assets/qr.png) | **Bagikan digital.** 900×900px, siap kirim ke grup atau tempel di dokumen |
+
+Dibuat dengan tingkat koreksi kesalahan **H (30%)**, jadi tetap terbaca meski
+tercetak buram, difotokopi berkali-kali, atau ternoda sebagian.
+
+Kalau alamat situsnya berubah, QR-nya harus dibuat ulang — isinya alamat itu
+sendiri, bukan pengalihan. Cara membuatnya ada di [Catatan pemeliharaan](#catatan-pemeliharaan).
 
 ---
 
@@ -182,5 +222,19 @@ sw.js, manifest.webmanifest    agar bisa dipasang di layar utama HP
   lalu pakai `id`-nya di kolom `kategori` Sheet.
 - Menambah jenis ikon baru: tambahkan `<symbol>` di `index.html` dan satu baris di `JENIS`.
 - Setelah mengubah `styles.css` atau `app.js`, naikkan `CACHE` di `sw.js`
-  (`info-kurikulum-v1` → `v2`) agar perangkat yang sudah memasang halaman ini
-  mengambil versi terbaru.
+  (mis. `info-kurikulum-v4` → `v5`) agar perangkat yang sudah memasang halaman
+  ini mengambil versi terbaru. Kalau lupa, perubahanmu tidak akan muncul di HP
+  yang sudah pernah membukanya.
+- **Membuat ulang QR code** (hanya perlu kalau alamat situsnya berubah):
+
+  ```bash
+  python3 -m venv /tmp/venv-qr && /tmp/venv-qr/bin/pip install segno
+  /tmp/venv-qr/bin/python -c "
+  import segno
+  qr = segno.make('https://fakhri24.github.io/info-kurikulum/', error='h')
+  qr.save('assets/qr.svg', scale=10, border=4, dark='#16233B', light='#FFFFFF')
+  qr.save('assets/qr.png', scale=20, border=4, dark='#16233B', light='#FFFFFF')
+  "
+  ```
+
+  Alamatnya juga ditulis sebagai teks di `poster.html` — ganti keduanya.
