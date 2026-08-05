@@ -27,7 +27,7 @@ KELUARAN = AKAR / "data" / "links.json"
 
 KOLOM = [
     "kategori", "judul", "deskripsi", "url", "jenis",
-    "pic", "privat", "pinned", "urutan", "aktif", "diperbarui", "grup",
+    "pic", "privat", "pinned", "urutan", "aktif", "diperbarui", "grup", "subgrup",
 ]
 
 CATATAN = (

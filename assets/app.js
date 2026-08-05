@@ -161,6 +161,7 @@
           aktif: rapikan(r.aktif) === '' ? true : isYa(r.aktif),
           diperbarui: rapikan(r.diperbarui),
           grup: rapikan(r.grup),
+          subgrup: rapikan(r.subgrup),
           baris: i
         };
       })
@@ -221,9 +222,9 @@
 
   function jerami(item) {
     var jenis = JENIS[item.jenis] ? JENIS[item.jenis].label : item.jenis;
-    /* `grup` ikut dicari supaya mengetik "rapor" tetap menemukan barisnya,
-       meski judul tiap barisnya hanya "2026/2027 — Ganjil". */
-    return [item.judul, item.deskripsi, item.pic, item.grup, jenis, labelKategori(item.kategori)]
+    /* `grup` dan `subgrup` ikut dicari supaya mengetik "rapor" atau "2026"
+       tetap menemukan barisnya, meski judulnya hanya "Ganjil — MID". */
+    return [item.judul, item.deskripsi, item.pic, item.grup, item.subgrup, jenis, labelKategori(item.kategori)]
       .join(' ')
       .toLowerCase();
   }
@@ -359,13 +360,34 @@
 
     var pemilih = buat('select', 'pilih');
     pemilih.id = idPemilih;
+
+    /* Varian berurutan yang berbagi `subgrup` dibungkus <optgroup>, sehingga
+       daftar panjang (rapor beberapa tahun ajaran) tetap terbaca. */
+    var subgrupTerakhir = null;
+    var wadah = null;
+
     entri.varian.forEach(function (v, i) {
       /* Penanda dibuat pendek supaya tidak terpotong di dropdown sempit —
          penjelasan lengkapnya sudah ada di kaki kartu saat opsi itu dipilih. */
       var opsi = buat('option', null, v.judul + (punyaTautan(v.url) ? '' : ' (kosong)'));
       opsi.value = String(i);
-      pemilih.appendChild(opsi);
+
+      if (!v.subgrup) {
+        subgrupTerakhir = null;
+        wadah = null;
+        pemilih.appendChild(opsi);
+        return;
+      }
+
+      if (v.subgrup !== subgrupTerakhir) {
+        subgrupTerakhir = v.subgrup;
+        wadah = document.createElement('optgroup');
+        wadah.label = v.subgrup;
+        pemilih.appendChild(wadah);
+      }
+      wadah.appendChild(opsi);
     });
+
     kartu.appendChild(pemilih);
 
     var buka = buat('a', 'kartu__buka');

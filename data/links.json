@@ -14,7 +14,8 @@
       "urutan": 1,
       "aktif": "ya",
       "diperbarui": "2026-08-01",
-      "grup": ""
+      "grup": "",
+      "subgrup": ""
     },
     {
       "kategori": "harian",
@@ -28,7 +29,8 @@
       "urutan": 2,
       "aktif": "ya",
       "diperbarui": "2026-08-01",
-      "grup": ""
+      "grup": "",
+      "subgrup": ""
     },
     {
       "kategori": "harian",
@@ -42,7 +44,8 @@
       "urutan": 3,
       "aktif": "ya",
       "diperbarui": "2026-08-01",
-      "grup": ""
+      "grup": "",
+      "subgrup": ""
     },
     {
       "kategori": "data-siswa",
@@ -56,7 +59,8 @@
       "urutan": 1,
       "aktif": "ya",
       "diperbarui": "2026-08-01",
-      "grup": ""
+      "grup": "",
+      "subgrup": ""
     },
     {
       "kategori": "data-siswa",
@@ -70,7 +74,8 @@
       "urutan": 2,
       "aktif": "ya",
       "diperbarui": "2026-08-01",
-      "grup": ""
+      "grup": "",
+      "subgrup": ""
     },
     {
       "kategori": "data-siswa",
@@ -84,26 +89,13 @@
       "urutan": 3,
       "aktif": "ya",
       "diperbarui": "2026-08-05",
-      "grup": ""
+      "grup": "",
+      "subgrup": ""
     },
     {
       "kategori": "data-siswa",
-      "judul": "2026/2027 — Ganjil",
-      "deskripsi": "Portal pengisian dan cetak rapor. Masuk dengan akun sekolah.",
-      "url": "",
-      "jenis": "web",
-      "pic": "Tim Kurikulum",
-      "privat": "",
-      "pinned": "ya",
-      "urutan": 4,
-      "aktif": "ya",
-      "diperbarui": "2026-08-05",
-      "grup": "Rapor"
-    },
-    {
-      "kategori": "data-siswa",
-      "judul": "2025/2026 — Genap",
-      "deskripsi": "Portal pengisian dan cetak rapor. Masuk dengan akun sekolah.",
+      "judul": "Ganjil — MID",
+      "deskripsi": "Portal pengisian dan cetak rapor. Pilih tahun ajaran dan jenis penilaiannya.",
       "url": "",
       "jenis": "web",
       "pic": "Tim Kurikulum",
@@ -112,12 +104,13 @@
       "urutan": 4,
       "aktif": "ya",
       "diperbarui": "2026-08-05",
-      "grup": "Rapor"
+      "grup": "Rapor",
+      "subgrup": "2026/2027"
     },
     {
       "kategori": "data-siswa",
-      "judul": "2025/2026 — Ganjil",
-      "deskripsi": "Portal pengisian dan cetak rapor. Masuk dengan akun sekolah.",
+      "judul": "Ganjil — ASAS",
+      "deskripsi": "Portal pengisian dan cetak rapor. Pilih tahun ajaran dan jenis penilaiannya.",
       "url": "",
       "jenis": "web",
       "pic": "Tim Kurikulum",
@@ -126,7 +119,98 @@
       "urutan": 4,
       "aktif": "ya",
       "diperbarui": "2026-08-05",
-      "grup": "Rapor"
+      "grup": "Rapor",
+      "subgrup": "2026/2027"
+    },
+    {
+      "kategori": "data-siswa",
+      "judul": "Genap — MID",
+      "deskripsi": "Portal pengisian dan cetak rapor. Pilih tahun ajaran dan jenis penilaiannya.",
+      "url": "",
+      "jenis": "web",
+      "pic": "Tim Kurikulum",
+      "privat": "",
+      "pinned": "",
+      "urutan": 4,
+      "aktif": "ya",
+      "diperbarui": "2026-08-05",
+      "grup": "Rapor",
+      "subgrup": "2026/2027"
+    },
+    {
+      "kategori": "data-siswa",
+      "judul": "Genap — ASAT",
+      "deskripsi": "Portal pengisian dan cetak rapor. Pilih tahun ajaran dan jenis penilaiannya.",
+      "url": "",
+      "jenis": "web",
+      "pic": "Tim Kurikulum",
+      "privat": "",
+      "pinned": "",
+      "urutan": 4,
+      "aktif": "ya",
+      "diperbarui": "2026-08-05",
+      "grup": "Rapor",
+      "subgrup": "2026/2027"
+    },
+    {
+      "kategori": "data-siswa",
+      "judul": "Ganjil — MID",
+      "deskripsi": "Portal pengisian dan cetak rapor. Pilih tahun ajaran dan jenis penilaiannya.",
+      "url": "",
+      "jenis": "web",
+      "pic": "Tim Kurikulum",
+      "privat": "",
+      "pinned": "",
+      "urutan": 4,
+      "aktif": "ya",
+      "diperbarui": "2026-08-05",
+      "grup": "Rapor",
+      "subgrup": "2025/2026"
+    },
+    {
+      "kategori": "data-siswa",
+      "judul": "Ganjil — ASAS",
+      "deskripsi": "Portal pengisian dan cetak rapor. Pilih tahun ajaran dan jenis penilaiannya.",
+      "url": "",
+      "jenis": "web",
+      "pic": "Tim Kurikulum",
+      "privat": "",
+      "pinned": "",
+      "urutan": 4,
+      "aktif": "ya",
+      "diperbarui": "2026-08-05",
+      "grup": "Rapor",
+      "subgrup": "2025/2026"
+    },
+    {
+      "kategori": "data-siswa",
+      "judul": "Genap — MID",
+      "deskripsi": "Portal pengisian dan cetak rapor. Pilih tahun ajaran dan jenis penilaiannya.",
+      "url": "",
+      "jenis": "web",
+      "pic": "Tim Kurikulum",
+      "privat": "",
+      "pinned": "",
+      "urutan": 4,
+      "aktif": "ya",
+      "diperbarui": "2026-08-05",
+      "grup": "Rapor",
+      "subgrup": "2025/2026"
+    },
+    {
+      "kategori": "data-siswa",
+      "judul": "Genap — ASAT",
+      "deskripsi": "Portal pengisian dan cetak rapor. Pilih tahun ajaran dan jenis penilaiannya.",
+      "url": "",
+      "jenis": "web",
+      "pic": "Tim Kurikulum",
+      "privat": "",
+      "pinned": "",
+      "urutan": 4,
+      "aktif": "ya",
+      "diperbarui": "2026-08-05",
+      "grup": "Rapor",
+      "subgrup": "2025/2026"
     },
     {
       "kategori": "sarana",
@@ -140,13 +224,14 @@
       "urutan": 1,
       "aktif": "ya",
       "diperbarui": "2026-08-01",
-      "grup": ""
+      "grup": "",
+      "subgrup": ""
     },
     {
       "kategori": "sarana",
       "judul": "Struktur Kurikulum",
       "deskripsi": "Struktur dan alokasi jam mata pelajaran per tingkat.",
-      "url": "",
+      "url": "https://drive.google.com/file/d/1bVAj1mEkwIiDNAsnwVo8TLHuUUD1exy0/view?usp=sharing",
       "jenis": "drive",
       "pic": "Tim Kurikulum",
       "privat": "",
@@ -154,13 +239,14 @@
       "urutan": 2,
       "aktif": "ya",
       "diperbarui": "2026-08-05",
-      "grup": ""
+      "grup": "",
+      "subgrup": ""
     },
     {
       "kategori": "sarana",
       "judul": "Kalender Akademik",
       "deskripsi": "Agenda satu tahun ajaran: libur, ujian, dan kegiatan sekolah.",
-      "url": "",
+      "url": "https://drive.google.com/file/d/1i2a3fqE5boPhn3CzrlfutQ9Y4AfAyqag/view?usp=sharing",
       "jenis": "drive",
       "pic": "Tim Kurikulum",
       "privat": "",
@@ -168,13 +254,14 @@
       "urutan": 3,
       "aktif": "ya",
       "diperbarui": "2026-08-05",
-      "grup": ""
+      "grup": "",
+      "subgrup": ""
     },
     {
       "kategori": "administrasi",
       "judul": "SK & Surat Tugas",
       "deskripsi": "Surat keputusan dan surat tugas guru. Terbuka hanya untuk yang diberi akses.",
-      "url": "",
+      "url": "https://drive.google.com/drive/folders/1GVdFRqQ18KSeUWxpeRQYsiKZmfsY6R5D?usp=sharing",
       "jenis": "drive",
       "pic": "Tim Kurikulum",
       "privat": "ya",
@@ -182,13 +269,14 @@
       "urutan": 1,
       "aktif": "ya",
       "diperbarui": "2026-08-01",
-      "grup": ""
+      "grup": "",
+      "subgrup": ""
     },
     {
       "kategori": "administrasi",
       "judul": "Tugas Mengajar",
       "deskripsi": "Pembagian tugas mengajar guru per mata pelajaran dan kelas.",
-      "url": "",
+      "url": "https://drive.google.com/file/d/16FgtgNdzr3MHjPovPqxQ76dWAHn_hsSr/view?usp=sharing",
       "jenis": "drive",
       "pic": "Tim Kurikulum",
       "privat": "",
@@ -196,13 +284,14 @@
       "urutan": 2,
       "aktif": "ya",
       "diperbarui": "2026-08-05",
-      "grup": ""
+      "grup": "",
+      "subgrup": ""
     },
     {
       "kategori": "administrasi",
-      "judul": "Informasi Privat Kurikulum",
-      "deskripsi": "Dokumen internal kurikulum di website terpisah. Terbuka hanya untuk yang diberi akses.",
-      "url": "",
+      "judul": "Informasi Program Privat Albago",
+      "deskripsi": "Informasi dan panduan untuk guru dan siswa bagi yang ingin mengajukan kelas privat",
+      "url": "https://fakhri24.github.io/aturan-privat-albago/",
       "jenis": "web",
       "pic": "Tim Kurikulum",
       "privat": "ya",
@@ -210,13 +299,14 @@
       "urutan": 3,
       "aktif": "ya",
       "diperbarui": "2026-08-01",
-      "grup": ""
+      "grup": "",
+      "subgrup": ""
     },
     {
       "kategori": "masukan",
       "judul": "Kotak Saran & Laporan Kurikulum",
       "deskripsi": "Sampaikan usulan, keluhan, atau laporan kepada tim kurikulum.",
-      "url": "",
+      "url": "https://docs.google.com/forms/d/e/1FAIpQLSeKSkRwTSk2NR4ws9HF2cUYjk5sLc1gEx0U0uOu6Ez1CvkNYA/viewform?usp=publish-editor",
       "jenis": "form",
       "pic": "Tim Kurikulum",
       "privat": "",
@@ -224,7 +314,8 @@
       "urutan": 1,
       "aktif": "ya",
       "diperbarui": "2026-08-01",
-      "grup": ""
+      "grup": "",
+      "subgrup": ""
     }
   ]
 }

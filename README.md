@@ -33,28 +33,49 @@ Semua isi halaman berasal dari **satu Google Sheet**. Kamu tidak perlu menyentuh
 | `aktif` | Isi `tidak` untuk menyembunyikan tanpa menghapus barisnya | tidak |
 | `diperbarui` | Tanggal `2026-08-01` — tampil di kartu | tidak |
 | `grup` | Isi sama di beberapa baris untuk menggabungkannya jadi satu kartu berpilihan | tidak |
+| `subgrup` | Tajuk pengelompokan di dalam dropdown, mis. tahun ajaran | tidak |
 
 ### Menggabungkan beberapa tautan jadi satu kartu
 
 Isi kolom `grup` dengan teks yang sama di beberapa baris, dan baris-baris itu akan
-menyatu menjadi **satu kartu berisi dropdown**. Dipakai untuk hal yang punya banyak
-versi, misalnya rapor per semester:
+menyatu menjadi **satu kartu berisi dropdown**. Kolom `subgrup` memberi tajuk di
+dalam dropdown itu, supaya daftar panjang tetap terbaca.
 
-| kategori | judul | grup | urutan |
+Contoh untuk rapor — tiap tahun ajaran punya empat penilaian:
+
+| judul | grup | subgrup | urutan |
 |---|---|---|---|
-| `data-siswa` | 2026/2027 — Ganjil | `Rapor` | 4 |
-| `data-siswa` | 2026/2027 — Genap | `Rapor` | 4 |
-| `data-siswa` | 2025/2026 — Ganjil | `Rapor` | 4 |
+| Ganjil — MID | `Rapor` | `2026/2027` | 4 |
+| Ganjil — ASAS | `Rapor` | `2026/2027` | 4 |
+| Genap — MID | `Rapor` | `2026/2027` | 4 |
+| Genap — ASAT | `Rapor` | `2026/2027` | 4 |
+| Ganjil — MID | `Rapor` | `2025/2026` | 4 |
+| … | | | |
+
+Tampilnya jadi seperti ini saat dropdown dibuka:
+
+```
+2026/2027
+   Ganjil — MID        ← terpilih otomatis
+   Ganjil — ASAS
+   Genap — MID
+   Genap — ASAT
+2025/2026
+   Ganjil — MID
+   …
+```
 
 Aturannya:
 
 - **`grup` jadi judul kartunya**, `judul` tiap baris jadi pilihan di dalam dropdown.
 - **Baris paling atas yang terpilih otomatis** — taruh yang paling baru di atas.
   Deskripsi, ikon, PIC, dan tanggal kartunya juga diambil dari baris teratas ini.
+- **`subgrup` hanya mengelompokkan baris yang berurutan.** Jaga agar baris satu
+  tahun ajaran tetap berdampingan; kalau terselip, tajuknya akan muncul dua kali.
 - Beri **`urutan` yang sama** di semua barisnya supaya kartunya tidak berpindah tempat.
-- Mencari `rapor` akan menampilkan kartunya lengkap; mencari `genap` akan menampilkan
-  kartu yang sama tetapi dropdown-nya hanya berisi semester genap.
-- Menambah semester baru = **menambah satu baris**, tidak perlu menyentuh kode.
+- Pencarian menyempitkan isi dropdown: `rapor` menampilkan semuanya, `genap` hanya
+  menyisakan semester genap, `2025` hanya menyisakan tahun ajaran itu.
+- Menambah penilaian baru = **menambah satu baris**, tidak perlu menyentuh kode.
 
 Nama kategori yang muncul di halaman:
 
