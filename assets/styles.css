@@ -71,7 +71,7 @@ body {
 
 .sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
 
-svg[class^="ikon"], .kartu__ikon, .cari__ikon, .kartu__panah {
+svg[class^="ikon"], .kartu__ikon, .cari__ikon, .kartu__panah, .kartu__panah-buka {
   fill: none;
   stroke: currentColor;
   stroke-width: 1.5;
@@ -408,6 +408,71 @@ a.kartu:focus-visible .kartu__panah { opacity: 1; transform: translate(1px, -1px
 .kartu--kosong { border-style: dashed; box-shadow: none; }
 .kartu--kosong .kartu__judul { color: var(--tinta-2); }
 .kartu__peringatan { color: var(--merah); }
+
+/* ---------- Kartu berisi pilihan (mis. Rapor per semester) ---------- */
+
+/* Bukan <a>, jadi tidak ikut terangkat saat disentuh — yang bisa diklik
+   di sini hanya pemilih dan tombol bukanya. */
+.kartu--grup { cursor: default; }
+
+.pilih {
+  width: 100%;
+  margin-top: .15rem;
+  padding: .5rem 2rem .5rem .7rem;
+  appearance: none;
+  border: 1px solid var(--garis);
+  border-radius: var(--lengkung);
+  background-color: var(--kertas);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235c6880' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right .6rem center;
+  background-size: 15px 15px;
+  font-family: var(--f-body);
+  font-size: .9rem;
+  font-weight: 500;
+  color: var(--tinta);
+  cursor: pointer;
+  transition: border-color .15s ease;
+}
+
+.pilih:hover { border-color: var(--tinta-2); }
+
+.pilih:focus-visible {
+  outline: none;
+  border-color: var(--tinta);
+  box-shadow: 0 0 0 3px rgba(var(--stabilo), .55);
+}
+
+@media (prefers-color-scheme: dark) {
+  .pilih {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2398a4b6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  }
+}
+
+.kartu__buka {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  align-self: flex-start;
+  margin-top: .15rem;
+  font-size: .9rem;
+  font-weight: 600;
+  color: var(--tinta);
+  text-decoration: none;
+  border-bottom: 1.5px solid var(--tinta);
+  padding-bottom: 1px;
+  transition: gap .15s ease, opacity .15s ease;
+}
+
+.kartu__buka:hover { gap: .6rem; }
+
+.kartu__panah-buka { width: 14px; height: 14px; flex: none; }
+
+.kartu__buka[aria-disabled="true"] {
+  color: var(--tinta-3);
+  border-bottom-color: var(--garis);
+  pointer-events: none;
+}
 
 /* animasi masuk */
 @media (prefers-reduced-motion: no-preference) {

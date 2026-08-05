@@ -147,7 +147,7 @@
 
   function normalisasi(mentah) {
     return mentah
-      .map(function (r) {
+      .map(function (r, i) {
         return {
           kategori: rapikan(r.kategori).toLowerCase(),
           judul: rapikan(r.judul),
@@ -159,13 +159,51 @@
           pinned: isYa(r.pinned),
           urutan: Number(rapikan(r.urutan)) || 999,
           aktif: rapikan(r.aktif) === '' ? true : isYa(r.aktif),
-          diperbarui: rapikan(r.diperbarui)
+          diperbarui: rapikan(r.diperbarui),
+          grup: rapikan(r.grup),
+          baris: i
         };
       })
       .filter(function (r) { return r.aktif && r.judul; })
       .sort(function (a, b) {
-        return a.urutan - b.urutan || a.judul.localeCompare(b.judul, 'id');
+        /* Urutan baris di Sheet jadi penentu kedua — lebih mudah ditebak staf
+           daripada urutan abjad, dan menentukan varian mana yang terpilih
+           lebih dulu di dalam sebuah grup. */
+        return a.urutan - b.urutan || a.baris - b.baris;
       });
+  }
+
+  /* Baris yang berbagi nilai `grup` yang sama digabung jadi satu kartu berisi
+     pemilih. Kartu itu menempati posisi anggota pertamanya. */
+  function kelompokkan(items) {
+    var hasil = [];
+    var posisi = Object.create(null);
+
+    items.forEach(function (item) {
+      if (!item.grup) {
+        hasil.push({ tunggal: item });
+        return;
+      }
+      if (posisi[item.grup] === undefined) {
+        posisi[item.grup] = hasil.length;
+        hasil.push({ grup: item.grup, varian: [item] });
+      } else {
+        hasil[posisi[item.grup]].varian.push(item);
+      }
+    });
+
+    return hasil;
+  }
+
+  /* Anggota pertama menyumbang seluruh metadata kartu grup: ikon, deskripsi,
+     PIC, tanggal. Karena itu baris teratas sebaiknya yang paling baru. */
+  function wakil(entri) {
+    return entri.tunggal || entri.varian[0];
+  }
+
+  function adaPinned(entri) {
+    if (entri.tunggal) return entri.tunggal.pinned;
+    return entri.varian.some(function (v) { return v.pinned; });
   }
 
   /* ---------------------- Pencarian ---------------------- */
@@ -183,7 +221,9 @@
 
   function jerami(item) {
     var jenis = JENIS[item.jenis] ? JENIS[item.jenis].label : item.jenis;
-    return [item.judul, item.deskripsi, item.pic, jenis, labelKategori(item.kategori)]
+    /* `grup` ikut dicari supaya mengetik "rapor" tetap menemukan barisnya,
+       meski judul tiap barisnya hanya "2026/2027 — Ganjil". */
+    return [item.judul, item.deskripsi, item.pic, item.grup, jenis, labelKategori(item.kategori)]
       .join(' ')
       .toLowerCase();
   }
@@ -281,9 +321,99 @@
     return kartu;
   }
 
-  function buatBagian(label, items, tokens, opsi) {
+  /* Kartu berisi banyak varian: satu pemilih, satu tombol buka.
+     Tidak bisa dibungkus <a> karena <select> tidak boleh berada di dalam tautan. */
+  var nomorPemilih = 0;
+
+  function buatKartuGrup(entri, tokens, indeks) {
+    var utama = entri.varian[0];
+    var jenis = JENIS[utama.jenis] || JENIS.web;
+    var idPemilih = 'pilih-' + (++nomorPemilih);
+
+    var kartu = buat('div', 'kartu kartu--grup');
+    kartu.style.setProperty('--i', String(indeks));
+
+    var atas = buat('div', 'kartu__atas');
+    atas.appendChild(ikon(jenis.ikon, 'kartu__ikon'));
+    atas.appendChild(buat('span', 'kartu__jenis', jenis.label));
+    if (utama.privat) {
+      var stempel = buat('span', 'kartu__privat', 'Privat');
+      stempel.title = 'Hanya bisa dibuka oleh akun yang diberi akses';
+      atas.appendChild(stempel);
+    }
+    kartu.appendChild(atas);
+
+    var judul = buat('h3', 'kartu__judul');
+    judul.appendChild(sorot(entri.grup, tokens));
+    kartu.appendChild(judul);
+
+    if (utama.deskripsi) {
+      var desk = buat('p', 'kartu__deskripsi');
+      desk.appendChild(sorot(utama.deskripsi, tokens));
+      kartu.appendChild(desk);
+    }
+
+    var label = buat('label', 'sr-only', 'Pilih ' + entri.grup + ' yang ingin dibuka');
+    label.htmlFor = idPemilih;
+    kartu.appendChild(label);
+
+    var pemilih = buat('select', 'pilih');
+    pemilih.id = idPemilih;
+    entri.varian.forEach(function (v, i) {
+      /* Penanda dibuat pendek supaya tidak terpotong di dropdown sempit —
+         penjelasan lengkapnya sudah ada di kaki kartu saat opsi itu dipilih. */
+      var opsi = buat('option', null, v.judul + (punyaTautan(v.url) ? '' : ' (kosong)'));
+      opsi.value = String(i);
+      pemilih.appendChild(opsi);
+    });
+    kartu.appendChild(pemilih);
+
+    var buka = buat('a', 'kartu__buka');
+    buka.target = '_blank';
+    buka.rel = 'noopener noreferrer';
+    buka.appendChild(buat('span', null, 'Buka ' + entri.grup));
+    buka.appendChild(ikon('i-panah', 'kartu__panah-buka'));
+
+    var bawah = buat('div', 'kartu__bawah');
+
+    function segarkan() {
+      var v = entri.varian[Number(pemilih.value) || 0];
+      var bisa = punyaTautan(v.url);
+
+      if (bisa) {
+        buka.href = v.url;
+        buka.removeAttribute('aria-disabled');
+      } else {
+        buka.removeAttribute('href');
+        buka.setAttribute('aria-disabled', 'true');
+      }
+      kartu.classList.toggle('kartu--kosong', !bisa);
+
+      bawah.textContent = '';
+      if (!bisa) {
+        bawah.appendChild(buat('span', 'kartu__peringatan', 'Tautan belum diisi'));
+      } else {
+        if (v.pic) bawah.appendChild(buat('span', null, v.pic));
+        if (v.diperbarui) bawah.appendChild(buat('span', null, formatTanggal(v.diperbarui)));
+      }
+    }
+
+    pemilih.addEventListener('change', segarkan);
+    segarkan();
+
+    kartu.appendChild(buka);
+    kartu.appendChild(bawah);
+
+    return kartu;
+  }
+
+  function buatBagian(label, entri, tokens, opsi) {
     opsi = opsi || {};
     var bagian = buat('section', 'bagian');
+
+    var jumlah = entri.reduce(function (n, e) {
+      return n + (e.tunggal ? 1 : e.varian.length);
+    }, 0);
 
     var kop = buat('div', 'bagian__kop');
     var judul = buat('h2', 'bagian__judul');
@@ -294,11 +424,13 @@
     }
     kop.appendChild(judul);
     kop.appendChild(buat('span', 'bagian__garis'));
-    kop.appendChild(buat('span', 'bagian__hitung', items.length + ' tautan'));
+    kop.appendChild(buat('span', 'bagian__hitung', jumlah + ' tautan'));
     bagian.appendChild(kop);
 
     var grid = buat('div', 'kartu-grid');
-    items.forEach(function (item, i) { grid.appendChild(buatKartu(item, tokens, i)); });
+    entri.forEach(function (e, i) {
+      grid.appendChild(e.tunggal ? buatKartu(e.tunggal, tokens, i) : buatKartuGrup(e, tokens, i));
+    });
     bagian.appendChild(grid);
 
     return bagian;
@@ -335,26 +467,30 @@
       return;
     }
 
+    /* Pengelompokan dilakukan setelah penyaringan, sehingga mencari "genap"
+       menyisakan kartu Rapor yang pemilihnya hanya berisi semester genap. */
+    var entri = kelompokkan(terpilih);
+
     if (tokens.length) {
       /* Sedang mencari: satu daftar rata, tanpa bagian pinned agar tidak ganda. */
-      el.isi.appendChild(buatBagian('Hasil pencarian', terpilih, tokens));
+      el.isi.appendChild(buatBagian('Hasil pencarian', entri, tokens));
       el.status.textContent = terpilih.length + ' tautan cocok dengan ' + state.query.trim() + '.';
       return;
     }
 
-    var pinned = terpilih.filter(function (i) { return i.pinned; });
+    var pinned = entri.filter(adaPinned);
     if (pinned.length) {
       el.isi.appendChild(buatBagian('Sering dibuka', pinned, tokens, { stabilo: true }));
     }
 
     KATEGORI.forEach(function (kat) {
-      var isiKat = terpilih.filter(function (i) { return i.kategori === kat.id; });
+      var isiKat = entri.filter(function (e) { return wakil(e).kategori === kat.id; });
       if (isiKat.length) el.isi.appendChild(buatBagian(kat.label, isiKat, tokens));
     });
 
     /* Kategori tak dikenal dari Sheet tetap ditampilkan, jangan sampai hilang diam-diam. */
     var dikenal = KATEGORI.map(function (k) { return k.id; });
-    var lain = terpilih.filter(function (i) { return dikenal.indexOf(i.kategori) === -1; });
+    var lain = entri.filter(function (e) { return dikenal.indexOf(wakil(e).kategori) === -1; });
     if (lain.length) el.isi.appendChild(buatBagian('Lainnya', lain, tokens));
 
     el.status.textContent = terpilih.length + ' tautan ditampilkan.';

@@ -32,6 +32,29 @@ Semua isi halaman berasal dari **satu Google Sheet**. Kamu tidak perlu menyentuh
 | `urutan` | Angka; makin kecil makin atas di dalam kategorinya | tidak |
 | `aktif` | Isi `tidak` untuk menyembunyikan tanpa menghapus barisnya | tidak |
 | `diperbarui` | Tanggal `2026-08-01` — tampil di kartu | tidak |
+| `grup` | Isi sama di beberapa baris untuk menggabungkannya jadi satu kartu berpilihan | tidak |
+
+### Menggabungkan beberapa tautan jadi satu kartu
+
+Isi kolom `grup` dengan teks yang sama di beberapa baris, dan baris-baris itu akan
+menyatu menjadi **satu kartu berisi dropdown**. Dipakai untuk hal yang punya banyak
+versi, misalnya rapor per semester:
+
+| kategori | judul | grup | urutan |
+|---|---|---|---|
+| `data-siswa` | 2026/2027 — Ganjil | `Rapor` | 4 |
+| `data-siswa` | 2026/2027 — Genap | `Rapor` | 4 |
+| `data-siswa` | 2025/2026 — Ganjil | `Rapor` | 4 |
+
+Aturannya:
+
+- **`grup` jadi judul kartunya**, `judul` tiap baris jadi pilihan di dalam dropdown.
+- **Baris paling atas yang terpilih otomatis** — taruh yang paling baru di atas.
+  Deskripsi, ikon, PIC, dan tanggal kartunya juga diambil dari baris teratas ini.
+- Beri **`urutan` yang sama** di semua barisnya supaya kartunya tidak berpindah tempat.
+- Mencari `rapor` akan menampilkan kartunya lengkap; mencari `genap` akan menampilkan
+  kartu yang sama tetapi dropdown-nya hanya berisi semester genap.
+- Menambah semester baru = **menambah satu baris**, tidak perlu menyentuh kode.
 
 Nama kategori yang muncul di halaman:
 

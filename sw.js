@@ -3,7 +3,7 @@
    Data (data/*.json) selalu diambil dari jaringan lebih dulu supaya
    perubahan di Google Sheet tidak tertahan cache. */
 
-var CACHE = 'info-kurikulum-v2';
+var CACHE = 'info-kurikulum-v3';
 
 var KERANGKA = [
   './',

@@ -6,14 +6,15 @@
       "kategori": "harian",
       "judul": "Jadwal Pelajaran",
       "deskripsi": "Jadwal mengajar seluruh kelas dan guru untuk semester berjalan.",
-      "url": "",
-      "jenis": "sheet",
+      "url": "https://drive.google.com/file/d/1I1RC2S7jru2Rb92f7AK2Op7XlkS8NiTl/view?usp=sharing",
+      "jenis": "drive",
       "pic": "Tim Kurikulum",
       "privat": "",
       "pinned": "ya",
       "urutan": 1,
       "aktif": "ya",
-      "diperbarui": "2026-08-01"
+      "diperbarui": "2026-08-01",
+      "grup": ""
     },
     {
       "kategori": "harian",
@@ -26,72 +27,148 @@
       "pinned": "ya",
       "urutan": 2,
       "aktif": "ya",
-      "diperbarui": "2026-08-01"
+      "diperbarui": "2026-08-01",
+      "grup": ""
     },
     {
       "kategori": "harian",
       "judul": "Kelas Tambahan Sore & Malam",
       "deskripsi": "Jadwal dan presensi kelas tambahan di luar jam sekolah.",
-      "url": "",
+      "url": "https://docs.google.com/spreadsheets/d/1vW8sDhmidLjDgANm0prUa2xbx2pccMyqls10dvfA1P0/edit?usp=sharing",
       "jenis": "sheet",
       "pic": "Tim Kurikulum",
       "privat": "",
       "pinned": "",
       "urutan": 3,
       "aktif": "ya",
-      "diperbarui": "2026-08-01"
+      "diperbarui": "2026-08-01",
+      "grup": ""
     },
     {
       "kategori": "data-siswa",
       "judul": "Data Siswa",
       "deskripsi": "Daftar induk siswa aktif per kelas dan rombongan belajar.",
-      "url": "",
+      "url": "https://docs.google.com/spreadsheets/d/1Kzjd7hiahXqKrhBROe2WZyUuil_czQJH6lC3GeGGt1I/edit?usp=sharing",
       "jenis": "sheet",
       "pic": "Tata Usaha",
       "privat": "",
       "pinned": "",
       "urutan": 1,
       "aktif": "ya",
-      "diperbarui": "2026-08-01"
+      "diperbarui": "2026-08-01",
+      "grup": ""
     },
     {
       "kategori": "data-siswa",
       "judul": "Data Siswa Lintas Minat",
       "deskripsi": "Pembagian siswa lintas minat beserta mata pelajaran pilihannya.",
-      "url": "",
+      "url": "https://docs.google.com/spreadsheets/d/1u1Kf2INolaa0BL1dYzv4r35PyaVTQ9UzjvHYYaxafEU/edit?usp=sharing",
       "jenis": "sheet",
       "pic": "Tim Kurikulum",
       "privat": "",
       "pinned": "",
       "urutan": 2,
       "aktif": "ya",
-      "diperbarui": "2026-08-01"
+      "diperbarui": "2026-08-01",
+      "grup": ""
     },
     {
       "kategori": "data-siswa",
-      "judul": "Rapor",
+      "judul": "Nilai Ulangan Harian",
+      "deskripsi": "Rekap nilai ulangan harian per kelas dan mata pelajaran.",
+      "url": "",
+      "jenis": "sheet",
+      "pic": "Tim Kurikulum",
+      "privat": "",
+      "pinned": "",
+      "urutan": 3,
+      "aktif": "ya",
+      "diperbarui": "2026-08-05",
+      "grup": ""
+    },
+    {
+      "kategori": "data-siswa",
+      "judul": "2026/2027 — Ganjil",
       "deskripsi": "Portal pengisian dan cetak rapor. Masuk dengan akun sekolah.",
       "url": "",
       "jenis": "web",
       "pic": "Tim Kurikulum",
       "privat": "",
       "pinned": "ya",
-      "urutan": 3,
+      "urutan": 4,
       "aktif": "ya",
-      "diperbarui": "2026-08-01"
+      "diperbarui": "2026-08-05",
+      "grup": "Rapor"
+    },
+    {
+      "kategori": "data-siswa",
+      "judul": "2025/2026 — Genap",
+      "deskripsi": "Portal pengisian dan cetak rapor. Masuk dengan akun sekolah.",
+      "url": "",
+      "jenis": "web",
+      "pic": "Tim Kurikulum",
+      "privat": "",
+      "pinned": "",
+      "urutan": 4,
+      "aktif": "ya",
+      "diperbarui": "2026-08-05",
+      "grup": "Rapor"
+    },
+    {
+      "kategori": "data-siswa",
+      "judul": "2025/2026 — Ganjil",
+      "deskripsi": "Portal pengisian dan cetak rapor. Masuk dengan akun sekolah.",
+      "url": "",
+      "jenis": "web",
+      "pic": "Tim Kurikulum",
+      "privat": "",
+      "pinned": "",
+      "urutan": 4,
+      "aktif": "ya",
+      "diperbarui": "2026-08-05",
+      "grup": "Rapor"
     },
     {
       "kategori": "sarana",
       "judul": "Data Buku Paket Pelajaran",
       "deskripsi": "Stok, peminjaman, dan pengembalian buku paket per mata pelajaran.",
-      "url": "",
+      "url": "https://docs.google.com/spreadsheets/d/1IQJGGqnGK2B7k9yPom7i8yzsl3CUGOxWY3xgeD6Ht4c/edit?usp=sharing",
       "jenis": "sheet",
       "pic": "Perpustakaan",
       "privat": "",
       "pinned": "",
       "urutan": 1,
       "aktif": "ya",
-      "diperbarui": "2026-08-01"
+      "diperbarui": "2026-08-01",
+      "grup": ""
+    },
+    {
+      "kategori": "sarana",
+      "judul": "Struktur Kurikulum",
+      "deskripsi": "Struktur dan alokasi jam mata pelajaran per tingkat.",
+      "url": "",
+      "jenis": "drive",
+      "pic": "Tim Kurikulum",
+      "privat": "",
+      "pinned": "",
+      "urutan": 2,
+      "aktif": "ya",
+      "diperbarui": "2026-08-05",
+      "grup": ""
+    },
+    {
+      "kategori": "sarana",
+      "judul": "Kalender Akademik",
+      "deskripsi": "Agenda satu tahun ajaran: libur, ujian, dan kegiatan sekolah.",
+      "url": "",
+      "jenis": "drive",
+      "pic": "Tim Kurikulum",
+      "privat": "",
+      "pinned": "",
+      "urutan": 3,
+      "aktif": "ya",
+      "diperbarui": "2026-08-05",
+      "grup": ""
     },
     {
       "kategori": "administrasi",
@@ -104,7 +181,22 @@
       "pinned": "",
       "urutan": 1,
       "aktif": "ya",
-      "diperbarui": "2026-08-01"
+      "diperbarui": "2026-08-01",
+      "grup": ""
+    },
+    {
+      "kategori": "administrasi",
+      "judul": "Tugas Mengajar",
+      "deskripsi": "Pembagian tugas mengajar guru per mata pelajaran dan kelas.",
+      "url": "",
+      "jenis": "drive",
+      "pic": "Tim Kurikulum",
+      "privat": "",
+      "pinned": "",
+      "urutan": 2,
+      "aktif": "ya",
+      "diperbarui": "2026-08-05",
+      "grup": ""
     },
     {
       "kategori": "administrasi",
@@ -115,9 +207,10 @@
       "pic": "Tim Kurikulum",
       "privat": "ya",
       "pinned": "",
-      "urutan": 2,
+      "urutan": 3,
       "aktif": "ya",
-      "diperbarui": "2026-08-01"
+      "diperbarui": "2026-08-01",
+      "grup": ""
     },
     {
       "kategori": "masukan",
@@ -130,7 +223,8 @@
       "pinned": "",
       "urutan": 1,
       "aktif": "ya",
-      "diperbarui": "2026-08-01"
+      "diperbarui": "2026-08-01",
+      "grup": ""
     }
   ]
 }
