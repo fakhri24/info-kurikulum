@@ -1,12 +1,12 @@
 {
-  "diperbarui": "2026-08-25",
+  "diperbarui": "2026-08-26",
   "catatan": "Salinan cadangan. Sumber sebenarnya adalah Google Sheet — file ini diperbarui otomatis oleh .github/workflows/sync-links.yml. Jangan edit manual kecuali Sheet belum disiapkan.",
   "items": [
     {
       "kategori": "harian",
       "judul": "Jadwal Pelajaran",
       "deskripsi": "Jadwal mengajar seluruh kelas dan guru untuk semester berjalan.",
-      "url": "https://drive.google.com/file/d/1I1RC2S7jru2Rb92f7AK2Op7XlkS8NiTl/view?usp=sharing",
+      "url": "https://drive.google.com/file/d/1Cpv02_sfUWt28G_l4x8TYETeR3abqneg/view?usp=sharing",
       "jenis": "drive",
       "pic": "Tim Kurikulum",
       "privat": "",
@@ -276,7 +276,7 @@
       "kategori": "administrasi",
       "judul": "Tugas Mengajar",
       "deskripsi": "Pembagian tugas mengajar guru per mata pelajaran dan kelas.",
-      "url": "https://drive.google.com/file/d/1bVAj1mEkwIiDNAsnwVo8TLHuUUD1exy0/view?usp=sharing",
+      "url": "https://drive.google.com/file/d/1qHlxbcl6nDwUPViWx9CDppGwL-nztWJ6/view?usp=sharing",
       "jenis": "drive",
       "pic": "Tim Kurikulum",
       "privat": "",
