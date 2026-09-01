@@ -1,5 +1,5 @@
 {
-  "diperbarui": "2026-09-01",
+  "diperbarui": "2026-09-02",
   "catatan": "Salinan cadangan. Sumber sebenarnya adalah Google Sheet — file ini diperbarui otomatis oleh .github/workflows/sync-links.yml. Jangan edit manual kecuali Sheet belum disiapkan.",
   "items": [
     {
@@ -34,16 +34,16 @@
     },
     {
       "kategori": "harian",
-      "judul": "Kelas Tambahan Sore & Malam",
+      "judul": "Kelas Tambahan Sore & Malam (25 Agustus - 24 September)",
       "deskripsi": "Jadwal dan presensi kelas tambahan di luar jam sekolah.",
-      "url": "https://docs.google.com/spreadsheets/d/1vW8sDhmidLjDgANm0prUa2xbx2pccMyqls10dvfA1P0/edit?usp=sharing",
+      "url": "https://docs.google.com/spreadsheets/d/1FHJqH-yRjihM32tVDxDddgW4lbg43bwmw-FxDc1PLfU/edit?usp=sharing",
       "jenis": "sheet",
       "pic": "Tim Kurikulum",
       "privat": "",
       "pinned": "ya",
       "urutan": 3,
       "aktif": "ya",
-      "diperbarui": "2026-08-01",
+      "diperbarui": "2026-09-01",
       "grup": "",
       "subgrup": ""
     },
