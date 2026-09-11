@@ -1,5 +1,5 @@
 {
-  "diperbarui": "2026-09-11",
+  "diperbarui": "2026-09-12",
   "catatan": "Salinan cadangan. Sumber sebenarnya adalah Google Sheet — file ini diperbarui otomatis oleh .github/workflows/sync-links.yml. Jangan edit manual kecuali Sheet belum disiapkan.",
   "items": [
     {
@@ -96,14 +96,14 @@
       "kategori": "data-siswa",
       "judul": "Ganjil — MID",
       "deskripsi": "Portal pengisian dan cetak rapor. Pilih tahun ajaran dan jenis penilaiannya.",
-      "url": "",
+      "url": "https://sites.google.com/view/mid-ganjil-albago-2627/home",
       "jenis": "web",
       "pic": "Tim Kurikulum",
       "privat": "",
-      "pinned": "",
+      "pinned": "ya",
       "urutan": 4,
       "aktif": "ya",
-      "diperbarui": "2026-08-05",
+      "diperbarui": "2026-09-11",
       "grup": "Rapor",
       "subgrup": "2026/2027"
     },
