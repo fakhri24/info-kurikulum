@@ -1,9 +1,9 @@
 {
-  "diperbarui": "2026-09-18",
+  "diperbarui": "2026-09-19",
   "catatan": "Salinan cadangan. Sumber sebenarnya adalah Google Sheet — file ini diperbarui otomatis oleh .github/workflows/sync-links.yml. Jangan edit manual kecuali Sheet belum disiapkan.",
   "items": [
     {
-      "kategori": "harian",
+      "kategori": "",
       "judul": "Jadwal Pelajaran",
       "deskripsi": "Jadwal mengajar seluruh kelas dan guru untuk semester berjalan.",
       "url": "https://drive.google.com/file/d/1Cpv02_sfUWt28G_l4x8TYETeR3abqneg/view?usp=sharing",
@@ -18,7 +18,7 @@
       "subgrup": ""
     },
     {
-      "kategori": "harian",
+      "kategori": "",
       "judul": "Form Piket Pagi",
       "deskripsi": "Diisi guru piket setiap pagi sebelum jam pertama, berikut catatan kejadian.",
       "url": "https://docs.google.com/forms/d/e/1FAIpQLSeKqyWch-25ecGGV3Qv_biYfB8ppdVlv8hx5rhY7ml6zXLfNw/viewform?usp=dialog",
@@ -33,7 +33,7 @@
       "subgrup": ""
     },
     {
-      "kategori": "harian",
+      "kategori": "",
       "judul": "Kelas Tambahan Sore & Malam (25 Agustus - 24 September)",
       "deskripsi": "Jadwal dan presensi kelas tambahan di luar jam sekolah.",
       "url": "https://docs.google.com/spreadsheets/d/1FHJqH-yRjihM32tVDxDddgW4lbg43bwmw-FxDc1PLfU/edit?usp=sharing",
@@ -48,7 +48,7 @@
       "subgrup": ""
     },
     {
-      "kategori": "data-siswa",
+      "kategori": "",
       "judul": "Data Siswa",
       "deskripsi": "Daftar induk siswa aktif per kelas dan rombongan belajar.",
       "url": "https://docs.google.com/spreadsheets/d/1Kzjd7hiahXqKrhBROe2WZyUuil_czQJH6lC3GeGGt1I/edit?usp=sharing",
@@ -63,7 +63,7 @@
       "subgrup": ""
     },
     {
-      "kategori": "data-siswa",
+      "kategori": "",
       "judul": "Data Siswa Lintas Minat",
       "deskripsi": "Pembagian siswa lintas minat beserta mata pelajaran pilihannya.",
       "url": "https://docs.google.com/spreadsheets/d/1u1Kf2INolaa0BL1dYzv4r35PyaVTQ9UzjvHYYaxafEU/edit?usp=sharing",
@@ -78,7 +78,7 @@
       "subgrup": ""
     },
     {
-      "kategori": "data-siswa",
+      "kategori": "",
       "judul": "Nilai Ulangan Harian",
       "deskripsi": "Rekap nilai ulangan harian per kelas dan mata pelajaran.",
       "url": "",
@@ -93,7 +93,7 @@
       "subgrup": ""
     },
     {
-      "kategori": "data-siswa",
+      "kategori": "",
       "judul": "Ganjil — MID",
       "deskripsi": "Portal pengisian dan cetak rapor. Pilih tahun ajaran dan jenis penilaiannya.",
       "url": "https://sites.google.com/view/mid-ganjil-albago-2627/home",
@@ -108,7 +108,7 @@
       "subgrup": "2026/2027"
     },
     {
-      "kategori": "data-siswa",
+      "kategori": "",
       "judul": "Ganjil — ASAS",
       "deskripsi": "Portal pengisian dan cetak rapor. Pilih tahun ajaran dan jenis penilaiannya.",
       "url": "",
@@ -123,7 +123,7 @@
       "subgrup": "2026/2027"
     },
     {
-      "kategori": "data-siswa",
+      "kategori": "",
       "judul": "Genap — MID",
       "deskripsi": "Portal pengisian dan cetak rapor. Pilih tahun ajaran dan jenis penilaiannya.",
       "url": "",
@@ -138,7 +138,7 @@
       "subgrup": "2026/2027"
     },
     {
-      "kategori": "data-siswa",
+      "kategori": "",
       "judul": "Genap — ASAT",
       "deskripsi": "Portal pengisian dan cetak rapor. Pilih tahun ajaran dan jenis penilaiannya.",
       "url": "",
@@ -153,7 +153,7 @@
       "subgrup": "2026/2027"
     },
     {
-      "kategori": "data-siswa",
+      "kategori": "",
       "judul": "Ganjil — MID",
       "deskripsi": "Portal pengisian dan cetak rapor. Pilih tahun ajaran dan jenis penilaiannya.",
       "url": "",
@@ -168,7 +168,7 @@
       "subgrup": "2025/2026"
     },
     {
-      "kategori": "data-siswa",
+      "kategori": "",
       "judul": "Ganjil — ASAS",
       "deskripsi": "Portal pengisian dan cetak rapor. Pilih tahun ajaran dan jenis penilaiannya.",
       "url": "",
@@ -183,7 +183,7 @@
       "subgrup": "2025/2026"
     },
     {
-      "kategori": "data-siswa",
+      "kategori": "",
       "judul": "Genap — MID",
       "deskripsi": "Portal pengisian dan cetak rapor. Pilih tahun ajaran dan jenis penilaiannya.",
       "url": "",
@@ -198,7 +198,7 @@
       "subgrup": "2025/2026"
     },
     {
-      "kategori": "data-siswa",
+      "kategori": "",
       "judul": "Genap — ASAT",
       "deskripsi": "Portal pengisian dan cetak rapor. Pilih tahun ajaran dan jenis penilaiannya.",
       "url": "",
@@ -213,7 +213,7 @@
       "subgrup": "2025/2026"
     },
     {
-      "kategori": "sarana",
+      "kategori": "",
       "judul": "Data Buku Paket Pelajaran",
       "deskripsi": "Stok, peminjaman, dan pengembalian buku paket per mata pelajaran.",
       "url": "https://docs.google.com/spreadsheets/d/1IQJGGqnGK2B7k9yPom7i8yzsl3CUGOxWY3xgeD6Ht4c/edit?usp=sharing",
@@ -228,7 +228,7 @@
       "subgrup": ""
     },
     {
-      "kategori": "sarana",
+      "kategori": "",
       "judul": "Struktur Kurikulum",
       "deskripsi": "Struktur dan alokasi jam mata pelajaran per tingkat.",
       "url": "https://drive.google.com/file/d/16FgtgNdzr3MHjPovPqxQ76dWAHn_hsSr/view?usp=sharing",
@@ -243,7 +243,7 @@
       "subgrup": ""
     },
     {
-      "kategori": "sarana",
+      "kategori": "",
       "judul": "Kalender Akademik",
       "deskripsi": "Agenda satu tahun ajaran: libur, ujian, dan kegiatan sekolah.",
       "url": "https://drive.google.com/file/d/1i2a3fqE5boPhn3CzrlfutQ9Y4AfAyqag/view?usp=sharing",
@@ -258,7 +258,7 @@
       "subgrup": ""
     },
     {
-      "kategori": "administrasi",
+      "kategori": "",
       "judul": "SK & Surat Tugas",
       "deskripsi": "Surat keputusan dan surat tugas guru. Terbuka hanya untuk yang diberi akses.",
       "url": "https://drive.google.com/drive/folders/1GVdFRqQ18KSeUWxpeRQYsiKZmfsY6R5D?usp=sharing",
@@ -273,7 +273,7 @@
       "subgrup": ""
     },
     {
-      "kategori": "administrasi",
+      "kategori": "",
       "judul": "Tugas Mengajar",
       "deskripsi": "Pembagian tugas mengajar guru per mata pelajaran dan kelas.",
       "url": "https://drive.google.com/file/d/1qHlxbcl6nDwUPViWx9CDppGwL-nztWJ6/view?usp=sharing",
@@ -288,7 +288,7 @@
       "subgrup": ""
     },
     {
-      "kategori": "administrasi",
+      "kategori": "",
       "judul": "Informasi Program Privat Albago",
       "deskripsi": "Informasi dan panduan untuk guru dan siswa bagi yang ingin mengajukan kelas privat",
       "url": "https://fakhri24.github.io/aturan-privat-albago/",
@@ -303,7 +303,7 @@
       "subgrup": ""
     },
     {
-      "kategori": "masukan",
+      "kategori": "",
       "judul": "Kotak Saran & Laporan Kurikulum",
       "deskripsi": "Sampaikan usulan, keluhan, atau laporan kepada tim kurikulum.",
       "url": "https://docs.google.com/forms/d/e/1FAIpQLSeKSkRwTSk2NR4ws9HF2cUYjk5sLc1gEx0U0uOu6Ez1CvkNYA/viewform?usp=publish-editor",
@@ -318,7 +318,7 @@
       "subgrup": ""
     },
     {
-      "kategori": "harian",
+      "kategori": "",
       "judul": "Tracking Matrikulasi Numerasi Kelas X",
       "deskripsi": "Ini adalah link untuk mengisi laporan ketuntasan tes sumatif dalam lms-matematika",
       "url": "https://docs.google.com/spreadsheets/d/1AzzIq2S-tXg7ktsbGoFuKISEq-hvYgtpAl9I0KMC2vY/edit?usp=sharing",
@@ -333,7 +333,7 @@
       "subgrup": ""
     },
     {
-      "kategori": "harian",
+      "kategori": "",
       "judul": "Tracking Privat Albago",
       "deskripsi": "Ini adalah link presensi privat albago",
       "url": "https://track-privat.web.app",
