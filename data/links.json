@@ -1,5 +1,5 @@
 {
-  "diperbarui": "2026-09-24",
+  "diperbarui": "2026-09-25",
   "catatan": "Salinan cadangan. Sumber sebenarnya adalah Google Sheet — file ini diperbarui otomatis oleh .github/workflows/sync-links.yml. Jangan edit manual kecuali Sheet belum disiapkan.",
   "items": [
     {
@@ -344,6 +344,21 @@
       "urutan": 5,
       "aktif": "ya",
       "diperbarui": "2026-08-13",
+      "grup": "",
+      "subgrup": ""
+    },
+    {
+      "kategori": "",
+      "judul": "Rekap Presensi Siswa",
+      "deskripsi": "Ini adalah link untuk melihat rekap presensi siswa semester genap 2627",
+      "url": "https://docs.google.com/spreadsheets/d/1fQ5-p_Xtw_8PT2czs92sqPfJzXeAnJO71WzlXm-2_5w/edit?usp=sharing",
+      "jenis": "sheet",
+      "pic": "Tim Kurikulum",
+      "privat": "",
+      "pinned": "ya",
+      "urutan": 5,
+      "aktif": "ya",
+      "diperbarui": "2026-09-24",
       "grup": "",
       "subgrup": ""
     }
